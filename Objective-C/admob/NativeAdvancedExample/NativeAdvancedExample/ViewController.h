@@ -12,19 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-@import GoogleMobileAds;
-@import UIKit;
+#import <GoogleMobileAds/GoogleMobileAds.h>
+#import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
 
 /// Container that holds the native ad.
 @property(nonatomic, weak) IBOutlet UIView *nativeAdPlaceholder;
-
-/// Switch to request app install ads.
-@property(nonatomic, weak) IBOutlet UISwitch *appInstallAdSwitch;
-
-/// Switch to request content ads.
-@property(nonatomic, weak) IBOutlet UISwitch *contentAdSwitch;
 
 /// Indicates if video ads should start muted.
 @property(nonatomic, weak) IBOutlet UISwitch *startMutedSwitch;

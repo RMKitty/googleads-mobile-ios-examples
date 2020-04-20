@@ -26,12 +26,19 @@ class MasterViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    APIDemoNames = ["AdMob - Ad Delegate", "AdMob - Ad Targeting", "AdMob - Banner Sizes",
-                    "DFP - PPID", "DFP - Custom Targeting", "DFP - Category Exclusions",
-                    "DFP - Multiple Ad Sizes", "DFP - App Events", "DFP - Fluid Ad Size"]
-    identifiers = ["adDelegateSegue", "adTargetingSegue", "bannerSizesSegue", "PPIDSegue",
-                   "customTargetingSegue", "categoryExclusionsSegue", "multipleAdSizesSegue",
-                   "appEventsSegue", "fluidAdSizeSegue"]
+    APIDemoNames = [
+      "AdMob - Ad Delegate", "AdMob - Ad Targeting", "AdMob - Banner Sizes",
+      "AdMob - Native Custom Mute This Ad",
+      "AdManager - PPID", "AdManager - Custom Targeting", "AdManager - Category Exclusions",
+      "AdManager - Multiple Ad Sizes", "AdManager - App Events", "AdManager - Fluid Ad Size",
+      "AdManager - Custom Video Controls",
+    ]
+    identifiers = [
+      "adDelegateSegue", "adTargetingSegue", "bannerSizesSegue", "customMuteSegue",
+      "PPIDSegue", "customTargetingSegue", "categoryExclusionsSegue",
+      "multipleAdSizesSegue", "appEventsSegue", "fluidAdSizeSegue",
+      "customControlsSegue",
+    ]
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -47,8 +54,9 @@ class MasterViewController: UITableViewController {
     return APIDemoNames.count
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
-      UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell
+  {
     let cell = tableView.dequeueReusableCell(withIdentifier: "DemoCell")!
     cell.textLabel!.text = APIDemoNames[indexPath.row]
 
